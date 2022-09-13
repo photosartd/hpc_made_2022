@@ -1,0 +1,4 @@
+*.xlsx
+*.json
+*test
+**.ipynb_checkpoints
