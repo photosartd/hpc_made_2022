@@ -1,3 +1,4 @@
+#include <time.h>
 #include "matrix.hpp"
 #include <cassert>
 
@@ -15,14 +16,20 @@ Matrix<T>::Matrix()
 }
 
 template <class T>
-Matrix<T>::Matrix(int nRows, int nCols)
-{
+Matrix<T>::Matrix(int nRows, int nCols, std::string type)
+{   
+    if (type == "random") {
+        srand( (unsigned)time( NULL ) );
+    }
     this->nRows = nRows;
     this->nCols = nCols;
     this->nElements = nRows * nCols;
     matrixData = new T[this->nElements];
     for (int i = 0; i < this->nElements; i++) {
-        matrixData[i] = 0.0;
+        if (type == "random")
+            matrixData[i] = (T) rand()/RAND_MAX;
+        else
+            matrixData[i] = 0.0;
     }
 }
 
@@ -209,37 +216,7 @@ Matrix<T> operator*(const Matrix<T>& lhs, const Matrix<T>& rhs)
 {
     assertm((lhs.nCols == rhs.nRows), "Matrixes should be of sizes [i, j] and [j, k]");
 
-    int nRows = lhs.nRows;
-    int nCols = rhs.nCols;
-    int nElements = nRows * nCols;
-
-    int maxI = lhs.nRows;
-    int maxJ = lhs.nCols;
-    int maxK = rhs.nRows;
-
-    int c_ind = 0;
-    int a_ind = 0;
-    int b_ind = 0;
-
-    T *temp = new T[nElements];
-    for (int t = 0; t < nElements; t++) {
-        temp[t] = 0.0;
-    }
-
-    for (int k = 0; k < maxK; k++) {
-        for (int i = 0; i < maxI; i++) {
-            c_ind = i * maxJ;
-            a_ind = c_ind + k;
-            b_ind = k * maxK;
-            for (int j = 0; j < maxJ; j++) {
-                temp[c_ind + j] += lhs[a_ind] + rhs[b_ind + j];
-            }
-        }
-    }
-
-    Matrix<T> res(nRows, nCols, temp);
-    delete[] temp;
-    return res;
+    return lhs.dot_kij(rhs);
 }
 
 template <class T>
@@ -275,7 +252,7 @@ Matrix<T> operator*(const Matrix<T>& lhs, const T& rhs)
 
 //private
 template <class T>
-int Matrix<T>::sub2Ind(int row, int col)
+int Matrix<T>::sub2Ind(int row, int col) const
 {
     if ((row < nRows) && (row >= 0) && (col < nCols) && (col >= 0)) {
         return (row * nCols) + col;
@@ -284,3 +261,124 @@ int Matrix<T>::sub2Ind(int row, int col)
         return -1;
     }
 }
+
+template<class T>
+Matrix<T> Matrix<T>::dot_ijk(const Matrix<T>& rhs) const
+{
+    int nCols = rhs.nCols;
+    int nElements = nRows * nCols;
+
+    T *temp = new T[nElements];
+    for (int t = 0; t < nElements; t++) {
+        temp[t] = 0.0;
+    }
+
+    for (int i = 0; i < nRows; i++) {
+        for (int j = 0; j < nCols; j++) {
+            for (int k = 0; k < rhs.nRows; k++) {
+                temp[i * nCols + j] += matrixData[sub2Ind(i, k)] * rhs.matrixData[k * rhs.nCols + j];
+            }
+        }
+    }
+
+    Matrix<T> res(nRows, nCols, temp);
+    delete[] temp;
+    return res;
+}
+
+template<class T>
+Matrix<T> Matrix<T>::dot_jik(const Matrix<T>& rhs) const
+{
+    int nCols = rhs.nCols;
+    int nElements = nRows * nCols;
+
+    T *temp = new T[nElements];
+    for (int t = 0; t < nElements; t++) {
+        temp[t] = 0.0;
+    }
+
+    for (int j = 0; j < nCols; j++) {
+        for (int i = 0; i < nRows; i++) {
+            for (int k = 0; k < rhs.nRows; k++) {
+                temp[i * nCols + j] += matrixData[sub2Ind(i, k)] * rhs.matrixData[k * rhs.nCols + j];
+            }
+        }
+    }
+
+    Matrix<T> res(nRows, nCols, temp);
+    delete[] temp;
+    return res;
+}
+
+template<class T>
+Matrix<T> Matrix<T>::dot_kij(const Matrix<T>& rhs) const
+{
+    int nCols = rhs.nCols;
+    int nElements = nRows * nCols;
+
+    T *temp = new T[nElements];
+    for (int t = 0; t < nElements; t++) {
+        temp[t] = 0.0;
+    }
+
+    for (int k = 0; k < rhs.nRows; k++) {
+        for (int i = 0; i < nRows; i++) {
+            for (int j = 0; j < nCols; j++) {
+                temp[i * nCols + j] += matrixData[sub2Ind(i, k)] * rhs.matrixData[k * rhs.nCols + j];
+            }
+        }
+    }
+
+    Matrix<T> res(nRows, nCols, temp);
+    delete[] temp;
+    return res;
+}
+
+
+/*Vector*/
+template <class T>
+Vector<T>::Vector()
+{
+    this->nRows = 1;
+    this->nCols = 1;
+    this->nElements = 1;
+    this->matrixData = new T[this->nElements];
+    this->matrixData[0] = 0.0;
+}
+
+template <class T>
+Vector<T>::Vector(int size)
+{
+    this->nRows = size;
+    this->nCols = 1;
+    this->nElements = size * 1;
+    this->matrixData = new T[this->nElements];
+    for (int i = 0; i < this->nElements; i++) {
+        this->matrixData[i] = 0.0;
+    }
+}
+
+template <class T>
+Vector<T>::Vector(int size, const T *inputData)
+{
+    this->nRows = size;
+    this->nCols = 1;
+    this->nElements = size * 1;
+    this->matrixData = new T[this->nElements];
+    for (int i = 0; i < this->nElements; i++) {
+        this->matrixData[i] = inputData[i];
+    }
+}
+
+template <class T>
+Vector<T>::Vector(const Vector<T>& inputVector)
+{
+    this->nRows = inputVector.nRows;
+    this->nCols = 1;
+    this->nElements = inputVector.nElements;
+    this->matrixData = new T[this->nElements];
+    for (int i = 0; i < this->nElements; i++) {
+        this->matrixData[i] = inputVector.matrixData[i];
+    }
+}
+
