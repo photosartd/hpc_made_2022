@@ -1,0 +1,194 @@
+0: Bulvar Rokossovskogo
+1: Cherkizovskaya
+2: Preobrazhenskaya ploschad
+3: Sokolniki
+4: Krasnoselskaya
+5: Komsomolskaya
+6: Krasnye vorota
+7: Chistye prudy
+8: Lubyanka
+9: Ohotny ryad
+10: Biblioteka imeni Lenina
+11: Kropotkinskaya
+12: Park kultury
+13: Frunzenskaya
+14: Sportivnaya
+15: Vorobevy gory
+16: Universitet
+17: Prospekt Vernadskogo
+18: Yugo-Zapadnaya
+19: Rechnoy vokzal
+20: Vodny stadion
+21: Voykovskaya
+22: Sokol
+23: Aeroport
+24: Dinamo
+25: Belorusskaya
+26: Mayakovskaya
+27: Tverskaya
+28: Teatralnaya
+29: Novokuznetskaya
+30: Paveletskaya
+31: Avtozavodskaya
+32: Kolomenskaya
+33: Kashirskaya
+34: Kantemirovskaya
+35: Tsaritsyno
+36: Orehovo
+37: Domodedovskaya
+38: Krasnogvardeyskaya
+39: Alma-Atinskaya
+40: Schelkovskaya
+41: Pervomayskaya
+42: Izmaylovskaya
+43: Partizanskaya
+44: Semenovskaya
+45: Elektrozavodskaya
+46: Baumanskaya
+47: Kurskaya
+48: Ploschad Revolyutsii
+49: Arbatskaya
+50: Smolenskaya
+51: Kievskaya
+52: Park Pobedy
+53: Slavyanskiy bulvar
+54: Kuntsevskaya
+55: Molodezhnaya
+56: Krylatskoe
+57: Strogino
+58: Myakinino
+59: Volokolamskaya
+60: Mitino
+61: Pyatnitskoe shosse
+62: Kuntsevskaya
+63: Pionerskaya
+64: Filevskiy park
+65: Bagrationovskaya
+66: Fili
+67: Kutuzovskaya
+68: Studencheskaya
+69: Kievskaya
+70: Smolenskaya
+71: Arbatskaya
+72: Aleksandrovskiy sad
+73: Vystavochnaya
+74: Mezhdunarodnaya
+75: Park kultury
+76: Oktyabrskaya
+77: Dobryninskaya
+78: Paveletskaya
+79: Taganskaya
+80: Kurskaya
+81: Komsomolskaya
+82: Prospekt Mira
+83: Novoslobodskaya
+84: Belorusskaya
+85: Krasnopresnenskaya
+86: Kievskaya
+87: Medvedkovo
+88: Babushkinskaya
+89: Sviblovo
+90: Botanicheskiy sad
+91: VDNH
+92: Alekseevskaya
+93: Rizhskaya
+94: Prospekt Mira
+95: Suharevskaya
+96: Turgenevskaya
+97: Kitay-gorod
+98: Tretyakovskaya
+99: Oktyabrskaya
+100: Shabolovskaya
+101: Leninskiy prospekt
+102: Akademicheskaya
+103: Profsoyuznaya
+104: Novye Cheremushki
+105: Kaluzhskaya
+106: Belyaevo
+107: Konkovo
+108: Teply Stan
+109: Yasenevo
+110: Novoyasenevskaya
+111: Planernaya
+112: Shodnenskaya
+113: Tushinskaya
+114: Schukinskaya
+115: Oktyabrskoe pole
+116: Polezhaevskaya
+117: Begovaya
+118: Ulitsa 1905 goda
+119: Barrikadnaya
+120: Pushkinskaya
+121: Kuznetskiy most
+122: Kitay-gorod
+123: Taganskaya
+124: Proletarskaya
+125: Volgogradskiy prospekt
+126: Tekstilschiki
+127: Kuzminki
+128: Ryazanskiy prospekt
+129: Vyhino
+130: Novokosino
+131: Novogireevo
+132: Perovo
+133: Shosse Entuziastov
+134: Aviamotornaya
+135: Ploschad Ilicha
+136: Marksistskaya
+137: Tretyakovskaya
+138: Altufevo
+139: Bibirevo
+140: Otradnoe
+141: Vladykino
+142: Petrovsko-Razumovskaya
+143: Timiryazevskaya
+144: Dmitrovskaya
+145: Savelovskaya
+146: Mendeleevskaya
+147: Tsvetnoy bulvar
+148: Chehovskaya
+149: Borovitskaya
+150: Polyanka
+151: Serpuhovskaya
+152: Tulskaya
+153: Nagatinskaya
+154: Nagornaya
+155: Nahimovskiy prospekt
+156: Sevastopolskaya
+157: Chertanovskaya
+158: Yuzhnaya
+159: Prazhskaya
+160: Ulitsa Akademika Yangelya
+161: Annino
+162: Bulvar Dmitriya Donskogo
+163: Marina roscha
+164: Dostoevskaya
+165: Trubnaya
+166: Sretenskiy bulvar
+167: Chkalovskaya
+168: Rimskaya
+169: Krestyanskaya zastava
+170: Dubrovka
+171: Kozhuhovskaya
+172: Pechatniki
+173: Volzhskaya
+174: Lyublino
+175: Bratislavskaya
+176: Marino
+177: Borisovo
+178: Shipilovskaya
+179: Zyablikovo
+180: Kashirskaya
+181: Varshavskaya
+182: Kahovskaya
+183: Ulitsa Starokachalovskaya
+184: Ulitsa Skobelevskaya
+185: Bulvar Admirala Ushakova
+186: Ulitsa Gorchakova
+187: Buninskaya alleya
+188: Timiryazevskaya
+189: Ulitsa Milashenkova
+190: Teletsentr
+191: Ulitsa akademika Koroleva
+192: Vystavochny tsentr
+193: Ulitsa Sergeya Eyzenshteyna
